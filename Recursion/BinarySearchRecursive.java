@@ -1,3 +1,8 @@
+/*Given an integer sorted array (sorted in increasing order) and an element x, find the x in given array using binary search. Return the index of x.
+Return -1 if x is not present in the given array.
+Note : If given array size is even, take first mid.*/
+
+//fn code
 public class solution {
 
      public static int binarySearch(int input[], int element) {
@@ -22,4 +27,26 @@ public class solution {
     
     return smallAns;}
     
+}
+
+
+//main code
+import java.util.Scanner;
+
+public class runner {
+	static Scanner s = new Scanner(System.in);
+	public static int[] takeInput() {
+		int size = s.nextInt();
+		int arr[] = new int[size];
+		for (int i = 0; i < size; i++) {
+			arr[i] = s.nextInt();
+		}
+		return arr;
+	}
+	
+	public static void main(String[] args) {
+		int[] input = takeInput();
+		int element = s.nextInt();
+		System.out.println(solution.binarySearch(input, element));
+	}
 }
