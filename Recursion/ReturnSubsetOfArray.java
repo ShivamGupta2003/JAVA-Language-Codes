@@ -118,7 +118,7 @@ public class solution {
         }
         for (int i = 0; i < smallanswer.length; i++) {
             myans[k] = new int[smallanswer[i].length + 1];
-            myans[k][0]=cn;
+            myans[k][0]=input[start];
             for (int j = 1; j <= smallanswer[i].length; j++) {
                 myans[k][j] = smallanswer[i][j - 1];
             }
