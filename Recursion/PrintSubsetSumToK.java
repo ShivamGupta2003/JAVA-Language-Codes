@@ -81,3 +81,47 @@ public class runner {
 		solution.printSubsetsSumTok(input, k);
 	}
 }
+
+
+//OTHER WAY OF WRITING SUBSET SUM TO K FUNCTION
+  public static int[][] subsetsSumK(int input[], int k) {
+		return subsetsSumK(input,k,0);
+	}
+    
+     public static int[][] subsetsSumK(int input[],int k,int start) {
+ 
+         if(start==input.length)
+         {
+            
+             if(k==0)
+         return new int[1][0];
+             
+             else 
+         return new int[0][0];
+         
+                 
+         }
+         
+         
+         
+         int[][] sa2=subsetsSumK(input,k-input[start],start+1);
+         int[][] sa1=subsetsSumK(input,k,start+1);
+         int[][] myans=new int[sa1.length+sa2.length][];
+         
+        int l=0;
+         
+         for(int i=0;i<sa1.length;i++,l++)
+         {
+             myans[l]=sa1[i];
+         }
+             
+         for(int i=0;i<sa2.length;i++,l++)
+         {
+             myans[l]=new int[sa2[i].length+1];
+             myans[l][0]=input[start];
+             for(int j=0;j<sa2[i].length;j++)
+                 myans[l][j+1]=sa2[i][j];
+         }
+         
+         return myans;
+}
