@@ -1,3 +1,4 @@
+//  QUESTION
 /*Given a string S, find and return all the possible permutations of the input string.
 Note 1 : The order of permutations is not important.
 Note 2 : If original string contains duplicate characters, permutations will also be duplicates.*/
@@ -42,4 +43,19 @@ public class solution {
 		return ans;
 	}
 	
+}
+
+
+import java.util.Scanner;
+
+public class runner {
+	
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		String input = s.nextLine();
+		String output[] = solution.permutationOfString(input);
+		for(int i = 0; i < output.length; i++) {
+			System.out.println(output[i]);
+		}
+	}
 }
