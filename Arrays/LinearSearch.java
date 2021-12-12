@@ -16,3 +16,7 @@ public class Solution {
     
     }
 }
+
+
+
+// Worst case in linear search algorithm is when item is the last element in array or item is not present in array and time complexcity for worst case is O(n)
