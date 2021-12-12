@@ -79,3 +79,6 @@ public class Runner {
         }
     }
 }
+
+
+//Worst case time complexcity of Selection sort is O(n^2)
