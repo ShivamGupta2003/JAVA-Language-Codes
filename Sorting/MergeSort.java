@@ -95,3 +95,5 @@ public class runner {
 		printArray(input);
 	}
 }
+
+//Time complexcity for merge sort is nlogn
