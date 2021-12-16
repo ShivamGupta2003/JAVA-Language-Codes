@@ -1,32 +1,60 @@
+// Question
+
+/*Given an integer array A of size N, check if the input array can be splitted in two parts such that -
+- Sum of both parts is equal
+- All elements in the input, which are divisible by 5 should be in same group.
+- All elements in the input, which are divisible by 3 (but not divisible by 5) should be in other group.
+- Elements which are neither divisible by 5 nor by 3, can be put in any group.
+Groups can be made with any set of elements, i.e. elements need not to be continuous. And you need to consider each and every element of input array in some group.
+Return true, if array can be split according to the above rules, else return false.*/
+
+
+//Functional code
 
 public class solution {
 
 	public static boolean splitArray(int input[]) {
-		
-        return test(input,0,0,0);
-		
+	return splitArray(input,0,0,0);
 	}
-	public static boolean test(int input[],int index,int left,int rght)
+    
+    public static boolean splitArray(int input[],int si,int lsum, int rsum)
     {
-        if(index==input.length)
-        {
-            return left==rght;
-        }
-        if(input[index] %3==0)
-        {
-            rght+=input[index];
-        }
-        else if(input[index] %5==0)
-        {
-            left+=input[index];
-        }
-        else
-        {
-            boolean leftSide= test(input,index+1,left+input[index],rght);
-            boolean rghtSide= test(input,index+1,left,rght+input[index]);
-            return leftSide || rghtSide;
-        }
-        return test(input,index+1,left,rght);
+        if(input.length == si)
+          return  lsum==rsum;
+        
+        
+         if(input[si] % 3 == 0)
+                lsum += input[si];
+            
+	 else if(input[si] % 5 == 0)
+                rsum += input[si];
+	    
+         else
+                return splitArray(input,si+1,lsum+input[si],rsum) || splitArray(input,si+1,lsum,rsum+input[si]) ;
+            
+        
+        return splitArray(input,si+1,lsum,rsum);
     }
-   
 }
+
+// Runner code
+import java.util.Scanner;
+
+public class runner {
+
+	static Scanner s = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		int n = s.nextInt();
+		int input[] = new int[n];
+		for(int i = 0; i < n; i++) {
+			input[i] = s.nextInt();
+		}
+		System.out.println(solution.splitArray(input));
+	}
+}
+
+            
+   
+
+   
