@@ -30,3 +30,6 @@ public class runner {
 		solution.towerOfHanoi(n, 'a', 'b', 'c');
 	}
 }
+
+
+//Recurrence relation is  T(n)=2T(n-1)+1
