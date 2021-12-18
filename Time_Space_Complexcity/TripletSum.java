@@ -5,7 +5,7 @@ Note :
 Given array/list can contain duplicate elements.*/
 
 
-// FUNCTIONAL CODE
+// FUNCTIONAL CODE approach 1 (TIME COMPLEXCITY=n^3)
 public class Solution {	
 
 	public static int tripletSum(int[] arr, int x) {
@@ -33,6 +33,9 @@ public class Solution {
    return count;
 	}
 }
+
+
+
 
 
 
@@ -85,3 +88,6 @@ public class Runner {
         }
     }
 }
+
+
+//fUNCTIONAL CODE APPROACH 2
