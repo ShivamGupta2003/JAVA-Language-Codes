@@ -57,6 +57,11 @@
         return ans;    
 	}
 
+	  	public static void printAllPossibleCodes(String input) {
+		String output[] = getCode(input);
+		for(int i = 0; i < output.length; i++) {
+			System.out.println(output[i]);
+		}
 }
 
 // MAIN CODE
