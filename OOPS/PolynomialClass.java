@@ -18,9 +18,7 @@ Note : Only keep those terms which have non - zero coefficients.*/
 
 public class Polynomial {
 
-	// public int coeff;
-	// public int degree;
-    public int arr[];
+    int arr[];
     
     Polynomial(){
     arr=new int[1];}
@@ -88,7 +86,7 @@ public Polynomial subtract(Polynomial p){
                 i++;}
     
         while(i<=degree2)
-            {ans.setCoefficient(i,p.arr[i]);
+            {ans.setCoefficient(i,-p.arr[i]);
                 i++;}
     
 		return ans;
