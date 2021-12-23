@@ -23,3 +23,5 @@ public class runner {
 		System.out.println(solution.sumOfDigits(n));
 	}
 }
+
+//         Time complexcity is O(logn) in which base of log is 10
