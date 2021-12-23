@@ -6,3 +6,6 @@ long fib(int n){
     }
     return fib(n - 1) + fib(n - 2);
 }
+
+
+//      TIME COMPLEXCITY :- O(2^N)
