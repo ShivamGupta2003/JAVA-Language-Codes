@@ -27,3 +27,5 @@ public class Solution {
                 return false;
             }
         }
+
+//MAIN CODE
