@@ -10,16 +10,16 @@ public class Main {
       {
         if ( j == 1 || j == n) 
         {
-          System.out.print("*	");
+          System.out.print(".");
         }
-        else if (i > n / 2 && (i == j || i + j == n + 1))
         
+        else if (i > n / 2 && (i == j || i + j == n + 1))
         {
-          System.out.print("*	");
+          System.out.print(".");
         }
         else
         {
-          System.out.print("	");
+          System.out.print(" ");
         }
       }
       System.out.println();
