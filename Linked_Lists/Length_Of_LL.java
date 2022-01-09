@@ -1,5 +1,6 @@
 
-//FUNCTIONAL CODE
+||FUNCTIONAL CODE||
+	
 public class Solution {
 
 	public static int length(LinkedListNode<Integer> head){
@@ -13,7 +14,8 @@ public class Solution {
 	}
 }
 
-//MAIN CODE
+||MAIN CODE||
+	
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
