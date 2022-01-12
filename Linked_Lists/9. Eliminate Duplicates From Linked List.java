@@ -1,3 +1,4 @@
+/*
 You have been given a singly linked list of integers where the elements are sorted in ascending order. Write a function that removes the consecutive duplicate values 
 such that the given list only contains unique elements and returns the head to the updated list.
  
@@ -35,22 +36,14 @@ Sample Input 2 :
 Sample Output 2 :
 10 20 30 40 50
 10
-  
+*/  
   
 	
 	
-                                                   ||FUNCTIONAL CODE||
+// Solution class that contains function that eliminates duplicates from Linked Lists
   public class Solution {
 
-     public static void print(LinkedListNode<Integer> head){
-        while(head != null) {
-            System.out.print(head.data + " ");
-            head = head.next;
-        }
-        
-        System.out.println();
-    }
-    
+    // Function That we wished to create
 	public static LinkedListNode<Integer> removeDuplicates(LinkedListNode<Integer> head) {
 		
         if(head==null)
@@ -60,15 +53,14 @@ Sample Output 2 :
         
 
         while(temp.next!=null){
-           
-
-            if(temp.data==(temp.next.data))
+          
+            if(temp.data.equals(temp.next.data))
             temp.next=temp.next.next;
 
              else
             temp=temp.next;}
         
-   print(head);
+  return head;
 
 	}
 }
@@ -76,8 +68,8 @@ Sample Output 2 :
 
 
 
-                                                      ||MAIN CODE||
-                                                        import java.io.BufferedReader;
+// Main Code
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
