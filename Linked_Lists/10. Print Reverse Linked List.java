@@ -1,3 +1,4 @@
+/*
 You have been given a singly linked list of integers. Write a function to print the list in a reverse order.
 To explain it further, you need to start printing the data from the tail and move towards the head of the list, printing the head data at the end.
 Note :
@@ -30,20 +31,26 @@ Sample Input 2 :
 Sample Output 2 :
 3 2 1
 50 40 30 20 10
+*/
+  
 
-  
-                                            || FUNCTIONAL CODE ||
-  
+
+// Solution Class that contains function to print Reverse Linked List  
 public class Solution {
+	
+	//Function that we wished to create
 	public static void printReverse(LinkedListNode<Integer> head) {
-        if(head==null)
+       
+	if(head==null)
             return;
+    
         printReverse(head.next);
         System.out.print(head.data+" ");
 	}
 }
 
-                                   ||MAIN CODE||
+
+//Main Code
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -57,7 +64,7 @@ class LinkedListNode<T> {
     }
 }
 
-public class Runner {
+public class Main {
     
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     
