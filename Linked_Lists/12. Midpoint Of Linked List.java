@@ -1,3 +1,4 @@
+/*
 For a given singly linked list of integers, find and return the node present at the middle of the list.
 
 Note :
@@ -37,28 +38,12 @@ Sample Input 2 :
 1 2 3 4 -1
 Sample Output 2 :
 2
+*/  
   
-  
-  ||Functional Code||
-    
-  
-  /*
-
-    Following is the Node class already written for the Linked List
-
-    class LinkedListNode<T> {
-        T data;
-        LinkedListNode<T> next;
-    
-        public LinkedListNode(T data) {
-            this.data = data;
-        }
-    }
-
-*/
-
+  // Solution Class that contains our functions to solve the problem
 public class Solution {
-    
+  
+//Function that was required as helper
 public static int length(LinkedListNode<Integer> head){
 		int i=0;
         while(head!=null){
@@ -69,6 +54,7 @@ public static int length(LinkedListNode<Integer> head){
 
 	}    
 
+//Function that we wished to create
     public static LinkedListNode<Integer> midPoint(LinkedListNode<Integer> head) {
        int l=length(head);
         
@@ -107,8 +93,9 @@ public static int length(LinkedListNode<Integer> head){
 
 
 
-|| Runner Code||
-  import java.io.BufferedReader;
+// Main Code
+
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
