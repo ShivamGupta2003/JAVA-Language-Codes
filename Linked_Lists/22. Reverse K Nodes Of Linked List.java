@@ -54,7 +54,7 @@ Sample Output 2 :
 // Solution class that contains function for solving our problem
 public class Solution {
 
-     //Function that returns updated head:-
+    //Function that returns full Reversed Linked List
 	public static LinkedListNode<Integer> reverseLinkedListRec(LinkedListNode<Integer> head) {
         if (head==null || head.next==null)
         {
@@ -71,6 +71,8 @@ public class Solution {
         return smallerHead;
 	}
     
+	
+	// Find tail function used while solving problem
     public static LinkedListNode<Integer> findTail(LinkedListNode<Integer> head, int k)
     {
             for (int i=0;i<k && head.next!=null;i++)
@@ -82,6 +84,8 @@ public class Solution {
         
     }
     
+	
+	// Length Function used while solving problem
     public static int findLength(LinkedListNode<Integer> head)
     {
         int count=0;
@@ -93,6 +97,8 @@ public class Solution {
         return count;
     }
     
+	
+	 //Function that we wished to create which returns updated head:-
     public static LinkedListNode<Integer> kReverse(LinkedListNode<Integer> head, int k) {
 		//Your code goes here
         if (head==null || k==0 || k==1)
