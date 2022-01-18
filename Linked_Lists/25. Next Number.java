@@ -30,7 +30,6 @@ Sample Output 1 :
 
 public class Solution {
 
-  
   // Reverse Function used while solving question
 	public static LinkedListNode<Integer> reverse(LinkedListNode<Integer> head){
      LinkedListNode<Integer> curr=head;
