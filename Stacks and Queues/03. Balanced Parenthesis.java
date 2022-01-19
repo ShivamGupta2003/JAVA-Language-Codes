@@ -42,7 +42,7 @@ makes it imbalanced and in turn, making the whole expression imbalanced. Hence t
 */
 
 
-import java.util.Stack;\
+import java.util.Stack;
 // Solution Class that contains functions for solving the question
 public class Solution {
 
