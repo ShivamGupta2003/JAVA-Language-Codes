@@ -1,4 +1,7 @@
-Given a generic tree, print the input tree in level wise order. That is, print the elements at same level in one line (separated by space). Print different levels in differnet lines.
+/*
+
+Given a generic tree, print the input tree in level wise order. That is, print the elements at same level in one line (separated by space).
+Print different levels in differnet lines.
 
 Input format :
 Elements in level order form separated by space (as per done in class). Order is - 
@@ -10,16 +13,14 @@ Level wise print
 Sample Input :
 10 3 20 30 40 2 40 50 0 0 0 0 
 
-  Sample Output :
+Sample Output :
 10
 20 30 40 
 40 5
   
+*/
   
-  
-  || FUNCTIONAL CODE ||
-  
-  
+ // Node Class
 
 class Node<T> 
 {
@@ -33,6 +34,9 @@ class Node<T>
 	}
 	
 }
+
+
+// Queue Class
 
 class Queue<T>
 {
@@ -84,6 +88,7 @@ T dequeue() {
 }
 
 
+// Solution Class that contains functions for solving problem
 
 public class Solution {
 	public static void printLevelWise(TreeNode<Integer> root){
@@ -122,8 +127,9 @@ public class Solution {
 }
 
 
-|| MAIN CODE||
-  import java.util.ArrayList;
+
+// Main Class Code
+import java.util.ArrayList;
 import java.util.Scanner;
 
  class QueueEmptyException extends Exception {
