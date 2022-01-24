@@ -1,3 +1,4 @@
+/*
 Given a generic tree, count and return the sum of all nodes present in the given tree.
 
 Input format :
@@ -11,9 +12,9 @@ Sample Input :
 10 3 20 30 40 2 40 50 0 0 0 0 
 Sample Output :
 190
+*/
   
-  || FUNCTIONAL CODE ||
-  
+  // SOLUTION CLASS THAT CONTAINS FUNCTION FOR SOLVING PROBLEM
 public class Solution {
 	
 	public static int sumOfAllNode(TreeNode<Integer> root){
@@ -34,7 +35,7 @@ public class Solution {
 }
 
 
-|| MAIN CODE ||
+// MAIN CLASS
   import java.util.ArrayList;
 import java.util.Scanner;
 
