@@ -36,7 +36,8 @@ public class Solution {
 
 
 // MAIN CLASS
-  import java.util.ArrayList;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
  class QueueEmptyException extends Exception {
