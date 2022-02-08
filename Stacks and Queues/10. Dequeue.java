@@ -59,7 +59,7 @@ The following input corresponds to getRear. Hence the output is 99.
 
 // SOLUTION CLASS THAT CONTAINS REQUIRED FUNCTIONS
 
-/******************
+/*
  * Following is the main function we are using internally.
  * Refer this for completing the Dequeue class
  *
