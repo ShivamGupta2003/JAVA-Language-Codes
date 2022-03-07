@@ -42,7 +42,6 @@ Neither their exists a pair which forms a palindrome, nor any of the words is a 
 
 
 // SOLUTION CLASS THAT CONTAINS FUNCTIONS TO OLVE PROBLEM
-
 import java.util.ArrayList;
 
 class TrieNode {
@@ -92,7 +91,7 @@ public class Trie {
 
 	private boolean search(TrieNode root, String word) {
 		if(word.length() == 0) {
-			return root.isTerminating;
+			return true;
 		}
 
 		int childIndex=word.charAt(0) - 'a';
@@ -138,38 +137,31 @@ public class Trie {
 
 	/*..................... Palindrome Pair................... */
 
-public static String reverseString(String str){
-        String reversedString="";
-        
-        for(int i=str.length()-1;i>=0;i--)
-        { reversedString+=str.charAt(i); }
-    
-    return reversedString;}
-    
-    
+
+	
+	public String reverse(String word) {
+		
+		String xString="";
+		for(int i=word.length()-1;i>=0;i--) {
+			xString+=word.charAt(i);
+		}
+		return xString;
+		
+	}
 	public boolean isPalindromePair(ArrayList<String> words) {
 		
-        for(int i=0;i<words.size();i++) {
+		for(int i=0;i<words.size();i++) {
 			
-			String x = reverseString(words.get(i));
+			String string = reverse(words.get(i));
 			
-			Trie see = new Trie();
-			
-            for(int j=0;j<x.length();j++) {
-				see.add(x.substring(j));
+			Trie suffixTrie = new Trie();
+			for(int j=0;j<string.length();j++) {
+				suffixTrie.add(string.substring(j));
 			}
-            
-			
-            for(int l=0;l<words.size();l++) {
-				
-                if(see.search(words.get(l))) {
+			for(String word : words) {
+				if(suffixTrie.search(word)) {
 					return true;
 				}
-                
-                 for(int j=0;j<x.length();j++) {
-				see.search(words.get(l).substring(j));
-			}
-                
 			}
 			
 			
@@ -181,3 +173,45 @@ public static String reverseString(String str){
 
 	
 } 
+
+
+
+// Main Class
+
+import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Runner {
+
+    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    
+    public static ArrayList<String> takeInput() throws IOException {
+        ArrayList<String> words = new ArrayList<>();
+
+        int n = Integer.parseInt(br.readLine().trim());
+
+        if (n == 0) {
+            return words;
+        }
+        
+        String[] listOfWords; 
+        listOfWords = br.readLine().split("\\s");
+        
+
+        for (int i = 0; i < n; ++i) {
+            words.add(listOfWords[i]);
+        }
+
+        return words;
+    }
+
+    public static void main(String[] args) throws NumberFormatException, IOException {
+        Trie root = new Trie();
+
+        ArrayList<String> words = takeInput();
+        System.out.println(root.isPalindromePair(words));
+    } 
+
+}
