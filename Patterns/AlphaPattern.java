@@ -9,7 +9,7 @@ public class Solution
     Scanner s=new Scanner(System.in);
     int n=s.nextInt();
     int i=1;
-    
+    int k;
     while(i<=n)
     {
    
@@ -19,6 +19,7 @@ public class Solution
     {
     System.out.print((char)(i+64));
     j=j+1;
+    k=k+1;
     }
     
    
