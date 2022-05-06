@@ -1,84 +1,52 @@
-// QUESTION
-/*Provided with a random integer array/list(ARR) of size N, you have been required to sort this array using 'Selection Sort'.*/
+     
+    // THIS IS SELECTION SORT ALGORITHM FUNCTION
+
+ public class SelectionSort{
+     public static void selection_sort(int[] arr){
+         for(int i=0;i<arr.length;i++){
+             int mini=arr[i];
+             int minind=i;
+
+             for(int j=i;j<arr.length;j++){
+                 if(mini>arr[j]){
+                     mini=arr[j];
+                     minind=j;
+                 }
+             }
+
+             int temp=arr[i];
+             arr[i]=mini;
+             arr[minind]=temp;
+         }
+     }
+     
+
+     public static void printArray(int arr[])
+     {
+         int n = arr.length;
+         for (int i=0; i<n; ++i)
+             System.out.print(arr[i]+" ");
+         System.out.println();
+     }
 
 
-// FUNCTIONAL CODE
-public class Solution {  
+     // DRIVER CODE
 
-    public static void selectionSort(int[] arr) {
-    
-     int n=arr.length;
-      
-        for(int i=0;i<n-1;i++)
-        {
-            int min=arr[i];
-            int minInd=i;
-            for(int j=i+1;j<n;j++)
-            {
-               if(arr[j]<min)
-                {
-                    min=arr[j];
-                        minInd=j;
-                }
-            }
-            if(minInd!=i)
-            {arr[minInd]=arr[i];
-            arr[i]=min;}
-        }
-        
-        
-    }
-}
-        
-// MAIN CODE
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
-public class Runner {
-
-    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    
-    public static int[] takeInput() throws IOException {
-        int size = Integer.parseInt(br.readLine().trim());
-        int[] input = new int[size];
-
-        if (size == 0) {
-            return input;
-        }
-        
-        String[] strNums; 
-        strNums = br.readLine().split("\\s");
-        
-
-        for (int i = 0; i < size; ++i) {
-            input[i] = Integer.parseInt(strNums[i]);
-        }
-
-        return input;
-    }
-
-    public static void printArray(int[] arr) {
-        for (int element : arr) {
-            System.out.print(element + " ");
-        }
-
-        System.out.println();
-    }
-
-    public static void main(String[] args) throws NumberFormatException, IOException {
-        int t = Integer.parseInt(br.readLine().trim());
-
-        while(t > 0) {
-
-            int[] input = takeInput();
-            Solution.selectionSort(input);
-            printArray(input);
-
-            t -= 1;
-        }
-    }
-}
+     public static void main(String args[])
+     {
+         int arr[] = {64,25,12,22,11};
+         selection_sort(arr);
+         System.out.println("Sorted array");
+         printArray(arr);
+     }
+ }
 
 
-//Worst case time complexcity of Selection sort is O(n^2)
+ /*
+
+KEYPOINTS:-
+Time Complexity: O(n2) as there are two nested loops.
+Auxiliary Space: O(1) 
+The good thing about selection sort is it never makes more than O(n) swaps and can be useful when memory write is a costly operation. 
+ 
+*/
