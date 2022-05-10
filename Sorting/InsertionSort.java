@@ -1,78 +1,105 @@
-// QUESTION
-/*Provided with a random integer array/list(ARR) of size N, you have been required to sort this array using 'Insertion Sort'.*/
+     
+    // THIS IS INSERTION SORT ALGORITHM FUNCTION
 
-// FUNCTIONAL CODE
+    public class InsertionSort{
+        public static void insertion_sort(int[] arr){
+            int i=1;
+            int temp;
 
-public class Solution {  
+            while(i<arr)
+        }
 
-    public static void insertionSort(int[] arr) {
-    	int n=arr.length;
-        int j=0;
+        // The above function always runs O(n^2) time even if the array is sorted. It can be optimized by stopping the algorithm if the inner loop didn’t cause any swap. 
         
-        for(int i=1;i<n;i++)
+    public static void bubble_sort_optimised(int arr[]){
+        int i, j, temp;
+        int n=arr.length;
+        boolean swapped;
+        for (i = 0; i < n - 1; i++)
         {
-           int x=arr[i];
-            for(j=i-1;j>=0 && arr[j]>x;j--)
-            {   
-                arr[j+1]=arr[j];
+            swapped = false;
+            for (j = 0; j < n - i - 1; j++)
+            {
+                if (arr[j] > arr[j + 1])
+                {
+                    // swap arr[j] and arr[j+1]
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    swapped = true;
+                }
             }
-            arr[j+1]=x;
-         }
-        
+ 
+            // IF no two elements were
+            // swapped by inner loop, then break
+            if (swapped == false)
+                break;
+        }
+    }
+       
+
+        public static void printArray(int arr[])
+        {
+            int n = arr.length;
+            for (int i=0; i<n; ++i)
+                System.out.print(arr[i]+" ");
+            System.out.println();
+        }
+   
+   
+        // DRIVER CODE
+   
+        public static void main(String args[])
+        {
+            int arr[] = {64,25,12,22,11};
+            bubble_sort(arr);
+            System.out.println("Sorted array");
+            printArray(arr);
+            int arr2[] = {64,25,12,22,11};
+            bubble_sort_optimised(arr2);
+            printArray(arr2);
+        }
+    }
+   
+   
+    /*
+   
+   KEYPOINTS:-
+   Worst Case Analysis for Bubble Sort:
+The worst-case condition for bubble sort occurs when elements of the array are arranged in decreasing order.
+In the worst case, the total number of iterations or passes required to sort a given array is (n-1). where ‘n’ is a number of elements present in the array.
+
+  At pass 1 :  Number of comparisons = (n-1)
+                     Number of swaps = (n-1)
+
+  At pass 2 :  Number of comparisons = (n-2)
+                     Number of swaps = (n-2)
+
+  At pass 3 :  Number of comparisons = (n-3)
+                    Number of swaps = (n-3)
+                              .
+                              .
+                              .
+  At pass n-1 :  Number of comparisons = 1
+                        Number of swaps = 1
+
+Now , calculating total number of comparison required to sort the array
+= (n-1) + (n-2) +  (n-3) + . . . 2 + 1
+= (n-1)*(n-1+1)/2  { by using sum of N natural Number formula }
+= n (n-1)/2    
+
+For Worst case:
+
+Total number of swaps = Total number of comparison
+Total number of comparison (Worst case) = n(n-1)/2
+Total number of swaps (Worst case) = n(n-1)/2
+
+Worst and Average Case Time Complexity: O(n*n). The worst case occurs when an array is reverse sorted.
+Best Case Time Complexity: O(n). The best case occurs when an array is already sorted.
+Auxiliary Space: O(1)
+Boundary Cases: Bubble sort takes minimum time (Order of n) when elements are already sorted.
+Sorting In Place: Yes
+Stable: Yes
     
-    }
-    }
-
-// MAIN CODE
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
-public class Runner {
-
-    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    
-    public static int[] takeInput() throws IOException {
-        int size = Integer.parseInt(br.readLine().trim());
-        int[] input = new int[size];
-
-        if (size == 0) {
-            return input;
-        }
-        
-        String[] strNums; 
-        strNums = br.readLine().split("\\s");
-        
-
-        for (int i = 0; i < size; ++i) {
-            input[i] = Integer.parseInt(strNums[i]);
-        }
-
-        return input;
-    }
-
-    public static void printArray(int[] arr) {
-        for (int element : arr) {
-            System.out.print(element + " ");
-        }
-
-        System.out.println();
-    }
-
-    public static void main(String[] args) throws NumberFormatException, IOException {
-        int t = Integer.parseInt(br.readLine().trim());
-
-        while(t > 0) {
-
-            int[] input = takeInput();
-            Solution.insertionSort(input);
-            printArray(input);
-
-            t -= 1;
-        }
-    }
-}
-
-
-
-//Worst case time complexcity of Insertion sort is O(n^2)
+   */
+   
